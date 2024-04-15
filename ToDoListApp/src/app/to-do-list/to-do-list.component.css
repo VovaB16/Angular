@@ -26,6 +26,15 @@ li:nth-child(odd) {
 }
 
 li.completed {
-    background-color: #eee;
+    background-color: #e8e6e6;
     text-decoration: line-through;
 }
+
+.task-deadline {
+    background-color: #cbcbcb;
+    border-radius: 4px;
+    margin-left: 10px;
+    padding: 4px 8px;
+    font-size: smaller;
+  }
+  

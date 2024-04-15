@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 interface Task {
   name: string;
   completed: boolean;
+  deadline: Date;
 }
 
 @Component({
@@ -17,21 +18,22 @@ interface Task {
 })
 export class ToDoListComponent {
   tasks: Task[] = [
-    { name: 'Hit the gym', completed: false },
-    { name: 'Pay bills', completed: false },
-    { name: 'Meet John', completed: false },
-    { name: 'Buy eggs', completed: false },
-    { name: 'Read a book', completed: false },
-    { name: 'Organize office', completed: false },
-    { name: 'Eat dinner', completed: false },
-    { name: 'Buy apples', completed: false },
-    { name: 'Meet George', completed: false },
-    { name: 'Feed the cat', completed: false },
-    { name: 'Write a letter', completed: false },
-    { name: 'Run 1 km', completed: false }
+    { name: 'Hit the gym', completed: false, deadline: new Date() },
+    { name: 'Pay bills', completed: false, deadline: new Date() },
+    { name: 'Meet John', completed: false, deadline: new Date() },
+    { name: 'Buy eggs', completed: false, deadline: new Date() },
+    { name: 'Read a book', completed: false, deadline: new Date() },
+    { name: 'Organize office', completed: false, deadline: new Date() },
+    { name: 'Eat dinner', completed: false, deadline: new Date() },
+    { name: 'Buy apples', completed: false, deadline: new Date() },
+    { name: 'Meet George', completed: false, deadline: new Date() },
+    { name: 'Feed the cat', completed: false, deadline: new Date() },
+    { name: 'Write a letter', completed: false, deadline: new Date() },
+    { name: 'Run 1 km', completed: false, deadline: new Date() }
   ];
 
   newTaskName = '';
+  newTaskDeadline: Date = new Date(); // Змінна для нового дедлайну
 
   toggleTaskCompletion(index: number) {
     this.tasks[index].completed = !this.tasks[index].completed;
@@ -43,8 +45,9 @@ export class ToDoListComponent {
 
   addTask(taskName: string) {
     if (taskName.trim()) {
-      this.tasks.push({ name: taskName.trim(), completed: false });
+      this.tasks.push({ name: taskName.trim(), completed: false, deadline: this.newTaskDeadline });
       this.newTaskName = '';
+      this.newTaskDeadline = new Date(); // Скидання дедлайну після додавання завдання
     }
   }
 
