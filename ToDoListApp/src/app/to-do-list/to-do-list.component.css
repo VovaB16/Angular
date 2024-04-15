@@ -1,0 +1,31 @@
+button {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+li:nth-child(even) {
+    background-color: rgb(58, 152, 224);
+}
+
+li:nth-child(odd) {
+    background-color: rgb(66, 197, 249);
+}
+
+li.completed {
+    background-color: #eee;
+    text-decoration: line-through;
+}
