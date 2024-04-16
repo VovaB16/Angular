@@ -1,0 +1,7 @@
+
+  <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="name" placeholder="Enter a new task">
+  <input type="date" formControlName="deadline">
+  <button type="submit">Add</button>
+  </form>
+
